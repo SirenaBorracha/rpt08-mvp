@@ -1,7 +1,8 @@
-// import react
+// this renders the actual notes list
+import React from 'react';
 
-// component
-  // list of current day's notes
+// list of current day's notes
 
 
-// export notesList
+
+export default NotesList;
