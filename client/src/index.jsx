@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import createNote from './components/CreateNote.jsx';
-import notesList from './components/NotesList.jsx';
+import CreateNote from './components/CreateNote.jsx';
+import NotesList from './components/NotesList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,20 +11,26 @@ class App extends React.Component {
       notes: []
     }
     // include this bindings
+    this.createNewNote = this.createNewNote.bind(this);
+    this.retrieveNotes = this.retrieveNotes.bind(this);
   }
 
-  createNewNote (text) {
+  createNewNote(text) {
     console.log(`new note: ${text}`);
+    var that = this;
 
-    // sends ajax post to server
     $.ajax({
       type: "POST",
-      url: "",
+      url: "http://localhost:3000/notes",
       data: JSON.stringify({ 'data': text }),
       contentType: 'application/json',
 
       success: function(data) {
         console.log('😎 success: ', data);
+
+        // call retrieveNotes
+        // retrieveNotes sets state
+        that.retrieveNotes();
 
       },
 
@@ -34,18 +40,34 @@ class App extends React.Component {
     });
   }
 
-  render () {
+  retrieveNotes() {
+    // ajax get
+      // retrieve all notes from db
+
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:3000/notes",
+      dataType: 'json',
+
+      success: function(data) {
+        console.log('🐶 success: ', data);
+      },
+
+      error: function(err) {
+        console.log('🤬🤬🤬');
+
+      }
+    });
+  }
+
+  render() {
     return (<div>
-      <h1>Me Talk Pretty One Day</h1>
-      <h4>...or something</h4>
-
-
+      <h1>Me Write Pretty One Day</h1>
+      <h5>...or something</h5>
+      <CreateNote postNote={this.createNewNote}/>
+      <NotesList notes={this.state.notes}/>
       </div>)
   }
 }
 
-
-
-
-// compile this and render it on <App>
 ReactDOM.render(<App />, document.getElementById('app'));
