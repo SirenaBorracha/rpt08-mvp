@@ -43,6 +43,7 @@ class App extends React.Component {
   retrieveNotes() {
     // ajax get
       // retrieve all notes from db
+    var that = this;
 
     $.ajax({
       type: "GET",
@@ -51,6 +52,9 @@ class App extends React.Component {
 
       success: function(data) {
         console.log('🐶 success: ', data);
+        that.setState({
+          notes: data
+        });
       },
 
       error: function(err) {

@@ -9,9 +9,11 @@ const NotesList = (props) => (
     No new notes
     </div>
     ) : (
-    <div>
-    props.notes[0].note
-    </div>)}
+    props.notes.map((el, idx) => (
+      <div>
+      {el.note}
+      </div>
+      )))}
   </div>
   </div>
 )
@@ -19,9 +21,3 @@ const NotesList = (props) => (
 export default NotesList;
 
 
-// (
-//     props.notes.map((el, idx) => (
-//       <div>
-//       {el.note}
-//       </div>
-//       )))
