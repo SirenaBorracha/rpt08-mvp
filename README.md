@@ -30,5 +30,5 @@ Customer Quote
 "It's hard to justify the added weight of a notebook in my already overflowing work bag; now I can eliminate one more item and make the commute just that much less painful while still taking action towards a long term goal"
 
 Closing and Call to Action
-Do you want to get yourself on the path to being a writer? Get to the (app store?) and download Me Write Pretty One Day and get yourself on the way there today!
+Do you want to get yourself on the path to being a writer? Get to the (app store?) and download bloknot and get yourself on the way there today!
 
