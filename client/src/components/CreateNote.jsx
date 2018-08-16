@@ -23,9 +23,9 @@ class CreateNote extends React.Component {
 
   render() {
     return (<div>
-      <h5>Add a new note</h5>
+      <h6>add a new note below</h6>
       <input value={this.state.note} onChange={this.onChange}/>
-      <button onClick={this.addNote}> Save note </button>
+      <button onClick={this.addNote}> save note </button>
       </div>)
   }
 }

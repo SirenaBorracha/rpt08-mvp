@@ -2,15 +2,19 @@ import React from 'react';
 
 const NotesList = (props) => (
   <div>
-  <h4>Notes List</h4>
+  <h5>today's notes</h5>
   <div>
   { (props.notes.length < 1) ? (
     <div>
-    No new notes
+    <ul>
+    <li>
+    no new notes
+    </li>
+    </ul>
     </div>
     ) : (
     props.notes.map((el, idx) => (
-      <div>
+      <div key={idx}>
       {el.note}
       </div>
       )))}

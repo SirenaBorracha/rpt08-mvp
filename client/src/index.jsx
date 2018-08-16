@@ -66,8 +66,8 @@ class App extends React.Component {
 
   render() {
     return (<div>
-      <h1>Me Write Pretty One Day</h1>
-      <h5>...or something</h5>
+      <h1>bloknot</h1>
+      <h5>improve via marginal gains</h5>
       <CreateNote postNote={this.createNewNote}/>
       <NotesList notes={this.state.notes}/>
       </div>)
