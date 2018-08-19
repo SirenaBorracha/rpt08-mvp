@@ -1,7 +1,11 @@
 import React from 'react';
 
+const notesList = {
+  "grid-area": "4/2/5/3"
+};
+
 const NotesList = (props) => (
-  <div>
+  <div style={notesList}>
   <h5>today's notes</h5>
   <div>
   { (props.notes.length < 1) ? (

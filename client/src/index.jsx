@@ -65,9 +65,49 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div>
-      <h1>bloknot</h1>
-      <h5>improve via marginal gains</h5>
+
+
+    // $('#app').css("font-family", "sans-serif");
+    // $('h1').css("background-color", "darkgrey");
+    // $('li').css("font-size", "12px");
+
+    //
+    // three columns
+    // in the middle create bunch of rows
+
+    const everywhere = {
+      "background-color": "whitesmoke",
+      "display": "grid",
+      "grid-template-columns": "1fr 3fr 1fr",
+      "grid-template-rows": "1fr 1fr 3fr 10fr",
+      "font-family": "helvetica",
+      "height": "100vh",
+      "width": "100vw"
+    }
+
+    const hOneStyles = {
+      "background-color": "black",
+      "color": "whitesmoke",
+      "grid-area": "1/2/2/3",
+      "padding": "0",
+      "margin": "0",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center"
+    }
+
+    const hFiveStyles = {
+      "grid-area": "2/2/3/3",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "letter-spacing": "2px"
+    }
+
+
+    return (<div style={everywhere}>
+      <h1 style={hOneStyles}>bloknot</h1>
+      <h5 style={hFiveStyles}>improve via marginal gains</h5>
       <CreateNote postNote={this.createNewNote}/>
       <NotesList notes={this.state.notes}/>
       </div>)
@@ -75,3 +115,10 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
+
+
+
+
