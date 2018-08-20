@@ -11,7 +11,6 @@ console.log(__dirname + '/../client/dist');
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/notes', function(req, res) {
-  // send req.body. whatever the note is to the mongodb
   console.log('🙃 req.body: ', req.body);
 
   // need to pass the note back as an array
